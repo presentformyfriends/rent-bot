@@ -1,5 +1,5 @@
 # RentBot
-This is a Python script I wrote that reminds me to pay my rent on time. 
+Python script I wrote that reminds me to pay my rent on time. 
 
 ## :calendar: Usage
 
