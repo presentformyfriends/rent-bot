@@ -7,6 +7,7 @@ from dateutil.relativedelta import relativedelta
 from decimal import Decimal
 
 
+
 def amtGet():
     rgx = re.compile(r"^[1-9][0-9]*(?:\.\d{,2})?$") # First digit must be between 1 and 9, followed by unlimited digits between 0 and 9, followed by a period, followed by any two digits
     try:
@@ -24,7 +25,7 @@ def amtGet():
 
 def daysDueGet():
     dt = datetime.now()
-    lastDayToPay = ((dt.replace(day=1) + timedelta(days=32)).replace(day=1) - timedelta(days=1)) # Replace Now's day with day 1 of that month. Add 32 days to go to next month, then replace that month's day with day 1. Minus one day = lastDayToPay (number of days until rent is due)
+    lastDayToPay = ((dt.replace(day=1) + timedelta(days=32)).replace(day=1) - timedelta(days=1)) # Replace Now's day with day 1 of that month. Add 32 days to go to next month, then replace that month's day with day 1. Minus one day = last day of a given month
     daysDue = (lastDayToPay) - (datetime.now())
     daysDue = daysDue.days # Number of days until rent is due
     return daysDue
